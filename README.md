@@ -1,2 +1,2 @@
 #PYTHGALLERY
-#####Solutions of Elements of Programming Interviews in Python
+#####Solutions of **Elements of Programming Interviews** in *Python*
