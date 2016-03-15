@@ -1,2 +1,2 @@
 #PYTHGALLERY
-#####Solutions of freqent programming interview questions written in *Python*
+#####Solutions of frequent programming interview questions written in *Python*
