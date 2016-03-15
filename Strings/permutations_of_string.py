@@ -21,13 +21,61 @@ def permutations(a, begin, end):
 
 permutations('ABC', 0, 2)
 
-'''Output:
-ABC
-ACB
-BAC
-BCA
-CBA
-CAB
+'''
+Level 1:
+permutations('ABC', 0, 2):
+	
+	index = 0
+	swap 'A' with 'A'--> 'ABC'
+	permutations('ABC', 1, 2)
+	swap back 'A' with 'A'--> 'ABC'
+	
+	index = 1
+	swap 'A' with 'B'-->'BAC'
+	permutations('BAC', 1, 2)
+	swap back 'B' with 'A'--> 'ABC'
+	
+	index = 2
+	swap 'A' with 'C'-->'CBA'
+	permutations('CBA', 1, 2)
+	swap back 'C' with 'A'--> 'ABC'
+	
+Level 2:
+permutations('ABC', 1, 2):
+	
+	index = 1
+	swap 'B' with 'B'-->'ABC'
+	permutations('ABC', 2, 2)--> print 'ABC'
+	swap back 'B' with 'B'--> 'ABC'
+	
+	index = 2
+	swap 'B' with 'C'-->'ACB'
+	permutations('ACB', 1, 2)--> print 'ACB'
+	swap back 'C' with 'A'--> 'ABC'
+	
+permutations('BAC', 1, 2):
+	
+	index = 1
+	swap 'A' with 'A'-->'BAC'
+	permutations('BAC', 2, 2)--> print 'BAC'
+	swap back 'A' with 'A'--> 'BAC'
+	
+	index = 2
+	swap 'A' with 'C'-->'BCA'
+	permutations('BCA', 1, 2)--> print 'BCA'
+	swap back 'C' with 'A'--> 'BCA'
+
+permutations('CBA', 1, 2):
+	
+	index = 1
+	swap 'B' with 'B'-->'CBA'
+	permutations('CBA', 2, 2)--> print 'CBA'
+	swap back 'B' with 'B'--> 'CBA'
+	
+	index = 2
+	swap 'B' with 'A'-->'CAB'
+	permutations('CAB', 1, 2)--> print 'CAB'
+	swap back 'A' with 'B'--> 'CBA'
 '''
 
 '''
