@@ -1,32 +1,25 @@
-def swap(a, i, j):
+def swap(a, index1, index2):
     '''
     Swap two characters in a string
     Since string swapping is not possible, hence we need to convert it into a list
     '''
-    s = list(a)               #convert string to list
-    s[i], s[j] = s[j], s[i]  #swap two characters
-    return "".join(s)       #convert list to string
+    s = list(a)                                                 #convert string to beginist
+    s[index1], s[index2] = s[index2], s[index1]  #swap two characters
+    return "".join(s)                                         #convert list to string
 
-def permute(a, l, r):
+def permutations(a, begin, end):
     '''
-    Permute all the characters of the string a from index l through r
+    Permute albegin the characters of the string a from index begin through end
     '''
-    if l == r :                #all characters permutted
+    if begin == end :                                       #all characters permutted
         print a               
     else :
-        for i in range(l, r + 1):   #permute the letters from index a[l] to a[r]
-            a = swap(a, i, l)       #swap the current element with the ith element
-            permute(a, l + 1, r)   #keep the current element fixed, permute the rest of the elements
-            a = swap(a, i, l)       # [BACKTRACK] swap back the ith element with the current element
+        for index in range(begin, end + 1):           #permute the beginetters from index a[begin] to a[end]
+            a = swap(a, index, begin)                   #swap the current element with the index-th element
+            permutations(a, begin + 1, end)          #keep the current element fixed, permute the rest of the elements
+            a = swap(a, index, begin)                   # [BACKTRACK] swap back the index-th element with the current element
 
-
-'''
-Time complexity :
-Printing n characters in the base case [ O(n) ] * for each case (n-1)! operations [ O((n-1)!) = O(n!)]
-Hence, T(n) = O(n * n!)
-'''
-
-permute('ABC', 0, 2)
+permutations('ABC', 0, 2)
 
 '''Output:
 ABC
@@ -35,4 +28,10 @@ BAC
 BCA
 CBA
 CAB
+'''
+
+'''
+Time complexity :
+Printing n characters in the base case [ O(n) ] * for each case (n-1)! operations [ O((n-1)!) = O(n!)]
+Hence, T(n) = O(n * n!)
 '''
