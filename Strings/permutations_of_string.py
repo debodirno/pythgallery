@@ -9,7 +9,7 @@ def swap(a, index1, index2):
 
 def permutations(a, begin, end):
     '''
-    Permute albegin the characters of the string a from index begin through end
+    Permute all the characters of the string a from index begin through end
     '''
     if begin == end :                                       #all characters permutted
         print a               
