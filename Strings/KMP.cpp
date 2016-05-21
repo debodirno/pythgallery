@@ -65,8 +65,3 @@ int main() {
     }
     return 0;
 }
-
-// Time Complexity : O(len1 + len2)
-// Prefix table building : O(len2)
-// Searching : O(len1)
-// Space Complexity : O(len2) for building the prefix table.
