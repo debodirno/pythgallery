@@ -24,3 +24,6 @@ int main() {
     }
     return 0;
 }
+
+// Time Complexity = O(len2 * (len1 - len2 + 1)) in the worst case
+// Worst Case Scenario : text : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXY", pattern : "XXXXXXXXXXY"
