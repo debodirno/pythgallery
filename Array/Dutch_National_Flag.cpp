@@ -16,23 +16,24 @@ int main() {
     cout << "Enter the partition element : ";
     cin >> midElem;
 
-    int lo = 0, hi = sizeArray - 1;
+    int lo = 0, hi = sizeArray - 1;                         // lo to track the elements lesser than key, hi to track the elements greater than key
     int key = arr[midElem], currentElem = 0;
 
     while(currentElem <= hi){
-        if(arr[currentElem] < key){
+        if(arr[currentElem] < key){                         // must be moved to the 1st partition
             swap(arr[currentElem], arr[lo]);
             currentElem ++;
-            lo ++;
+            lo ++;                                          // always lo <= currentElem
         }
 
-        else if(arr[currentElem] == key){
+        else if(arr[currentElem] == key){                   // do not do anything if the current element is equal to the key
             currentElem ++;
         }
 
         else{
-            swap(arr[currentElem], arr[hi]);
-            hi --;
+            swap(arr[currentElem], arr[hi]);                // move the heavier element to the 3rd partition
+            hi --;                                          // we do not increment currentElem here (Note)
+                                                            // this is because the swapped element in the index of currentElem may be greater than key
         }
     }
 
