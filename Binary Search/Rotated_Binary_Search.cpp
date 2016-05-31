@@ -19,7 +19,6 @@ int main() {
     // to find the pivot
 
     int lo = 0, hi = sizeArray - 1, mid;
-    bool flag = false;
 
     while(lo <= hi){
         mid = (lo + hi) / 2;
@@ -36,7 +35,7 @@ int main() {
     // to find the element in the array
 
     lo = 0, hi = sizeArray - 1, mid;
-    flag = false;
+    bool flag = false;
 
     while(lo <= hi){
         mid = (lo + hi) / 2;
