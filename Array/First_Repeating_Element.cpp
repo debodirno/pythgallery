@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int sizeArray, midElem;
+    int sizeArray;
     cout << "Enter the size of array : ";
     cin >> sizeArray;
 
@@ -15,6 +15,7 @@ int main() {
 
     map<int, int> HashMap;
     int minimum = INT_MAX, minimumIndex = INT_MAX;
+
     for(counter = 0; counter < sizeArray; counter ++){
         if(minimum > HashMap[arr[counter]] && HashMap[arr[counter]] > 0)
             minimum = HashMap[arr[counter]], minimumIndex = arr[counter];
